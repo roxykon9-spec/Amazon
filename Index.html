@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Case ID Verification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 400px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 10px;
+      width: 80%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background: #ff9900;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .profile {
+      margin-top: 20px;
+      display: none;
+    }
+    .profile img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="amazon.png" alt="Company Logo" class="logo">
+
+    <h2>Case ID Verification</h2>
+    <input type="text" id="caseId" placeholder="Enter Case ID">
+    <br>
+    <button onclick="verifyCase()">Verify</button>
+
+    <div class="profile" id="profile">
+      <img src="jacob.png" alt="Profile Photo">
+      <h3>Jacob Miller</h3>
+      <p>Email: jacob.miller@example.com</p>
+      <p>Phone: +1 (555) 123-4567</p>
+      <p>Status: Active</p>
+    </div>
+  </div>
+
+  <script>
+    function verifyCase() {
+      const input = document.getElementById("caseId").value.trim();
+      const profile = document.getElementById("profile");
+
+      if (input === "778249") {
+        profile.style.display = "block";
+      } else {
+        profile.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
