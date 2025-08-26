@@ -1,87 +1,122 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Case ID Verification</title>
+  <title>Prank Department Agreement with Victim</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      font-family: "Times New Roman", serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      background: #fff;
+      margin: 50px auto;
       padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .card {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      max-width: 400px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    h1 {
       text-align: center;
+      font-size: 26px;
+      margin-bottom: 25px;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
-    .logo {
-      width: 120px;
+    .agreement-text {
+      border: 1px solid #ccc;
+      padding: 20px;
+      background: #fafafa;
+      height: 180px;
+      overflow-y: auto;
+      font-size: 15px;
+      line-height: 1.6;
       margin-bottom: 20px;
     }
-    input {
-      padding: 10px;
-      width: 80%;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-bottom: 12px;
+    label {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 15px;
     }
     button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      background: #ff9900;
+      background: #003366;
       color: white;
-      font-weight: bold;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 5px;
       cursor: pointer;
     }
-    .profile {
-      margin-top: 20px;
-      display: none;
+    button:hover {
+      background: #002244;
     }
-    .profile img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin-bottom: 10px;
+    .submitted {
+      display: none;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: green;
+      margin-top: 25px;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Prank Department Agreement with Victim</h1>
+    
+    <div class="agreement-text">
+      Subject: Official Statement Regarding Case No. 778249
 
-  <div class="card">
-    <img src="amazon.png" alt="Company Logo" class="logo">
+I, an elderly citizen of the United States, respectfully submit the following statement for the record in relation to my case registered with Microsoft under Case No. 778249.
 
-    <h2>Case ID Verification</h2>
-    <input type="text" id="caseId" placeholder="Enter Case ID">
-    <br>
-    <button onclick="verifyCase()">Verify</button>
+Following a sudden issue with my computer, I contacted Microsoft Support for assistance. Microsoft appointed a technician named Mr. Jacob Miller, who officially registered my case and diagnosed my network. During this diagnosis, it was discovered that I had been the victim of a hacking incident. The hacker had compromised the security of my network by accessing my IP address and was allegedly misusing it for the illegal distribution of child pornography.
 
-    <div class="profile" id="profile">
-      <img src="IMG_4290.jpeg" alt="Profile Photo">
-      <h3>Jacob Miller</h3>
-      <p>Email: jacob.miller@example.com</p>
-      <p>Phone: +1 (555) 123-4567</p>
-      <p>Status: Active</p>
+This matter was subsequently escalated to the Federal Trade Commission (FTC), where Officer Eric Monti was assigned to assist me. I hereby make the following declarations:
+	1.	Acknowledgment of Responsibility
+I fully understand and agree that, during the course of this case, if I violate any rules, regulations, or instructions of the FTC or the Federal Government, I shall accept complete responsibility for my actions and shall be liable for any consequences or penalties imposed under the law.
+	2.	Request for Protection of Assets
+As a law-abiding citizen with no involvement in this crime, I humbly request the United States Government to provide me with a federal account in which I can securely hold and protect my financial assets until this matter is resolved.
+	3.	Commitment to Confidentiality
+I solemnly agree to maintain the strictest confidentiality regarding this case and not disclose any details until the conclusion of the proceedings, in full compliance with federal requirements.
+	4.	Clarification of Individual Responsibility
+I declare that I am the sole individual involved in this matter. No member of my family has any knowledge of or involvement in this case, and therefore, they should not be questioned, interrogated, or held accountable in any way.
+	5.	Restriction on International Travel
+I willingly consent that, until this case is lawfully concluded, I shall not travel outside the United States without the approval of the concerned federal authorities.
+
+Declaration
+I hereby affirm under penalty of perjury that the above statements are true and accurate to the best of my knowledge and belief.
+
+Respectfully submitted,
+[Diane Opeil]
+[26-08-2025]
+
+    </div>
+    
+    <form id="agreementForm">
+      <label>
+        <input type="checkbox" id="agreeBox"> I agree to the above terms
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+    
+    <div class="submitted" id="submittedMsg">
+      ✅ Your agreement with FTC has been submitted.
     </div>
   </div>
 
   <script>
-    function verifyCase() {
-      const input = document.getElementById("caseId").value.trim();
-      const profile = document.getElementById("profile");
-
-      if (input === "778249") {
-        profile.style.display = "block";
+    document.getElementById("agreementForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      if(document.getElementById("agreeBox").checked){
+        document.getElementById("submittedMsg").style.display = "block";
+        this.style.display = "none";
       } else {
-        profile.style.display = "none";
+        alert("Please check the box to agree before submitting.");
       }
-    }
+    });
   </script>
 </body>
 </html>
